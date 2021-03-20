@@ -1,0 +1,22 @@
+TIME
+
+;;;; searching ;;;;
+
+o(1) = hashmaps
+o(log n) = pre-sorted, etc
+o(n) = naive
+
+;;;; sorting ;;;;;
+
+o(n log n) = divide & conquer alogos
+o(n^2)
+
+;;;; intractables ;;;;
+
+o(2^n)
+o(n!)
+o(n^n)
+
+SPACE
+
+
