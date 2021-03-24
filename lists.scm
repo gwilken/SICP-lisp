@@ -4,6 +4,8 @@
 
 (define null '())
 
+(define (print x) (display x) (newline))
+
 (define (list-ref l n)
   (if (= n 0)
     (car l)
@@ -20,15 +22,15 @@
 ;)
 
 ; length iterative 
-(define (length l)
-  (define (len-iter l c)
-    (if (null? l)
-      c
-      (len-iter (cdr l) (+ 1 c))
-    )
-  )
-  (len-iter l 0)
-)
+;(define (length l)
+;  (define (len-iter l c)
+;    (if (null? l)
+;      c
+;      (len-iter (cdr l) (+ 1 c))
+;    )
+;  )
+;  (len-iter l 0)
+;)
 
 
 (define (last-pair l)
@@ -62,4 +64,27 @@
   (iter-rev l null)
 )
 
+
+(define (scale-list l n)
+  (if (null? l)
+    l
+    (cons (* n (car l)) (scale-list (cdr l) n))
+  )
+)
+
+
+(define (map p l)
+  (if (null? l)
+    l
+    (cons (p (car l)) (map p (cdr l)))
+  )
+)
+
+
+(define (for-each p l)
+  (cond ((not (null? l))
+    (p (car l))
+    (for-each p (cdr l))
+  ))
+)
 
