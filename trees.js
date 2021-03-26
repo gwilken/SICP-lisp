@@ -31,7 +31,7 @@ function printTree(tree) {
 
 let t1 = makeTree(1, [makeTree(2, leaves(3, 4)), makeTree(5, leaves(6, 7, 8))])
 
-printTree(t1)
+// printTree(t1)
 
 
 function treeMap(func, tree) {
@@ -47,7 +47,4 @@ function square(x) {
 let t2 = treeMap(square, t1)
 
 printTree(t2)
-
-
-
 
