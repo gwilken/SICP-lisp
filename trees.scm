@@ -44,20 +44,20 @@
           (make-tree 5 (leaves 6 7 8)) )))
 
 ;;;; mutual recursion
-;(define (treemap fn tree)
-;  (make-tree (fn (datum tree))
-;             (map (lambda (child) (treemap fn child))
-;             (children tree) )))
+(define (treemap fn tree)
+  (make-tree (fn (datum tree))
+             (map (lambda (child) (treemap fn child))
+             (children tree) )))
 
 
 ;;;; mutual recursion (broken apart)
-(define (treemap fn tree)
-  (make-tree (fn (datum tree))
-             (forest-map fn (children tree))))
+;(define (treemap fn tree)
+;  (make-tree (fn (datum tree))
+;             (forest-map fn (children tree))))
 
-(define (forest-map fn forest)
-  (if (null? forest)
-    '()
-    (cons (treemap fn (car forest))
-          (forest-map fn (cdr forest)))))
+;(define (forest-map fn forest)
+;  (if (null? forest)
+;    '()
+;    (cons (treemap fn (car forest))
+;          (forest-map fn (cdr forest)))))
 
